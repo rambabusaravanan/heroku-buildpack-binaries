@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 echo "-->> Load Binaries <<--"
 
-mkdir -p /app/.heroku/mongo
+mkdir -p /app/.heroku/mongo /app/.profile.d
 curl -s https://fastdl.mongodb.org/tools/db/mongodb-database-tools-ubuntu1404-x86_64-100.1.1.tgz | tar --strip-components=1 -xz -C /app/.heroku/mongo
 
 echo "export PATH=\"\$PATH:\$HOME/.heroku/mongo/bin\"" > $HOME/.profile.d/mongo.sh
