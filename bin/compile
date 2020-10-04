@@ -9,11 +9,8 @@ curl -s https://fastdl.mongodb.org/tools/db/mongodb-database-tools-ubuntu1404-x8
 echo "export PATH=\"\$PATH:\$HOME/.heroku/mongo/bin\"" > $BUILD_DIR/.profile.d/mongo.sh
 
 # 2. aws cli
-curl -s https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip -o awscliv2.zip
+curl -s https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.0.54.zip -o awscliv2.zip
 unzip -q awscliv2.zip
-sh aws/install -i $BUILD_DIR/.heroku/aws -b $BUILD_DIR/.heroku/bin
+sh aws/install -i $BUILD_DIR/.heroku/aws
 rm -r awscliv2.zip aws
-echo "export PATH=\"\$PATH:\$HOME/.heroku/bin\"" > $BUILD_DIR/.profile.d/aws.sh
-
-ls -la $BUILD_DIR/.heroku
-ls -la $BUILD_DIR/.profile.d
+echo "export PATH=\"\$PATH:\$HOME/.heroku/aws/v2/2.0.54/bin\"" > $BUILD_DIR/.profile.d/aws.sh
